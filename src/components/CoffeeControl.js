@@ -31,6 +31,26 @@ class CoffeeControl extends React.Component {
     this.setState({mainCoffeeList: newMainCoffeeList});
     this.setState({formVisibleOnPage: false});
   }
+
+  handleChangingSelectedCoffee = (id) => {
+    const selectedCoffee = this.state.mainCoffeeList.filter(coffee => coffee.id === id)[0];
+    this.setState({selectedCoffee: selectedCoffee});
+  }
+
+  handleEditClick = () => {
+    this.setState({editing: true});
+  }
+
+  handleEditingCoffeeInList = (coffeeToEdit) => {
+    const editedMainCoffeeList = this.state.mainCoffeeList
+      .filter(coffee => coffee.id !== this.state.selectedCoffee.id)
+      .concat(coffeeToEdit);
+    this.setState({
+      mainCoffeeList: editedMainCoffeeList,
+      editing: false,
+      selectedCoffee: null
+    });
+  }
   
   render(){
     let currentlyVisibleState = null;
