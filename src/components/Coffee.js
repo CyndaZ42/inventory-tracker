@@ -22,3 +22,5 @@ Coffee.propTypes = {
   inventory: PropTypes.number,
   whenCoffeeClicked: PropTypes.func
 }
+
+export default Coffee;

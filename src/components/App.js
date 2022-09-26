@@ -5,10 +5,8 @@ import CoffeeControl from "./CoffeeControl";
 function App(){
   return (
     <React.Fragment>
-      <div className="container">
         <Header />
         <CoffeeControl />
-      </div>
     </React.Fragment>
   );
 }
